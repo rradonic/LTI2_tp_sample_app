@@ -21,12 +21,8 @@ sqlite3:
   timeout: 5000
 
 test:
-  adapter: mysql2
-  host: localhost
-  encoding: utf8
-  database: tpsampleapp
-  username: ltiuser
-  password: ltipswd
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
 

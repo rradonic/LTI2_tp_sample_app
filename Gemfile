@@ -4,7 +4,6 @@ ruby '2.1.4'
 
 gem 'rails', '~> 4.1.6'
 
-gem 'mysql2', '~> 0.3.13'
 gem 'sqlite3'
 
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'

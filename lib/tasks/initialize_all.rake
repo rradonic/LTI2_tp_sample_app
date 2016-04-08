@@ -7,24 +7,29 @@ namespace :init_task do
 
   desc "Reseed TC and TP"
   task :re_seed  => :environment do
-    system "rake db:seed"
+    puts "cleaning db tables..."
+    Lti2Tp::Registration.delete_all
+    LtiRegistrationWip.delete_all
+    Tenant.delete_all
+    Iresource.delete_all
+
+    puts "load..."
     tp_path = Rails.application.config.tool_consumer_registry.tool_provider_path
     system "cd #{tp_path}; rake db:load"
   end
 
   desc "Reseed and backup all--assumes current is canonic"
   task :backup  => :environment do
-    puts 'seed'
-    system "rake db:seed RAILS_ENV=mysql"
-    puts 'dump'
-    system "rake db:dump RAILS_ENV=mysql"
-    puts "load mysql"
-    system "rake db:load RAILS_ENV=mysql"
-    puts "mysqldump to closet/backups"
-    system "mysqldump tpsampleapp -u ltiuser --password=ltipswd >> data/tpsampleapp.sql"
-    puts "load sqlite3"
-    system "rake db:load RAILS_ENV=sqlite3"
-    puts "copy sqlite3 to closet/backups"
+    puts "cleaning db tables..."
+    Lti2Tp::Registration.delete_all
+    LtiRegistrationWip.delete_all
+    Tenant.delete_all
+    Iresource.delete_all
+
+    puts "load..."
+    system "rake db:load"
+
+    puts "copy sqlite3 to closet/backups..."
     system "cp db/development.sqlite3 data/tpsampleapp.sqlite3"
   end
 

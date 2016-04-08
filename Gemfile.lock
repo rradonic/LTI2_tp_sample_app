@@ -26,13 +26,8 @@ GIT
       railties (>= 4.0.0, < 5)
 
 GIT
-  remote: git://github.com/turgu1/yaml_db.git
-  revision: bd632c7d64940665524af4441580e3c6e96ee359
-  specs:
-    yaml_db (0.2.3)
-
-PATH
-  remote: ../LTI2-Reference
+  remote: git://github.com/rradonic/LTI2-Reference.git
+  revision: f28aa434ce038fead488a7f2ad5ffac644bd22e8
   specs:
     lti2 (0.0.1)
       httparty
@@ -42,6 +37,12 @@ PATH
       rails
       rb-readline
       uuid
+
+GIT
+  remote: git://github.com/turgu1/yaml_db.git
+  revision: bd632c7d64940665524af4441580e3c6e96ee359
+  specs:
+    yaml_db (0.2.3)
 
 GEM
   remote: https://rubygems.org/
@@ -212,7 +213,7 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.1)
-    rb-readline (0.5.2)
+    rb-readline (0.5.3)
     ref (1.0.5)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
@@ -290,3 +291,6 @@ DEPENDENCIES
   uglifier (~> 2.4.0)
   uuid (~> 2.3.7)
   yaml_db!
+
+BUNDLED WITH
+   1.11.2

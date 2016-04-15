@@ -26,8 +26,13 @@ GIT
       railties (>= 4.0.0, < 5)
 
 GIT
-  remote: git://github.com/rradonic/LTI2-Reference.git
-  revision: f28aa434ce038fead488a7f2ad5ffac644bd22e8
+  remote: git://github.com/turgu1/yaml_db.git
+  revision: bd632c7d64940665524af4441580e3c6e96ee359
+  specs:
+    yaml_db (0.2.3)
+
+PATH
+  remote: ../LTI2-Reference
   specs:
     lti2 (0.0.1)
       httparty
@@ -37,12 +42,6 @@ GIT
       rails
       rb-readline
       uuid
-
-GIT
-  remote: git://github.com/turgu1/yaml_db.git
-  revision: bd632c7d64940665524af4441580e3c6e96ee359
-  specs:
-    yaml_db (0.2.3)
 
 GEM
   remote: https://rubygems.org/
